@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="count">
-      {{ count }}
+      {{ Storecounter.count }}
     </div>
     <div class="buttons">
       <button @click="decreaseCount">-</button>
@@ -16,6 +16,9 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import {useCounterStore } from '@/stores/counter'
+
+const storeCounter = useCounterStore()
 
 const count = ref(0)
 
